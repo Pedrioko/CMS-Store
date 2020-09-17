@@ -1,39 +1,40 @@
 package com.pedrioko.github.cmsapi.domain;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public @Data
-class Product implements Serializable {
+class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String name;
+    @ManyToOne
+    private Client client;
 
-    private String preview;
+    private OrderStatus status;
 
-    private long quantity;
+    private String transaction_id;
 
-    private double cost;
+    private String uuid;
 
-    private double saleprice;
+    @ManyToOne
+    private Address addressShipping;
 
-    @ManyToMany
-    private List<Category> categoryList = new ArrayList<>();
+    @ManyToOne
+    private Address addressInvoice;
 
-    @ManyToMany
-    private List<Tag> tagList = new ArrayList<>();
-
+    @OneToMany
+    private List<DetailOrder> detailOrderList;
 
 }

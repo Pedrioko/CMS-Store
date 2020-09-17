@@ -13,27 +13,20 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public @Data
-class Product implements Serializable {
+class Client implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String name;
+    private String firstname;
 
-    private String preview;
+    private String lastname;
 
-    private long quantity;
+    @OneToMany
+    private List<Address> addresses = new ArrayList<>();
 
-    private double cost;
-
-    private double saleprice;
-
-    @ManyToMany
-    private List<Category> categoryList = new ArrayList<>();
-
-    @ManyToMany
-    private List<Tag> tagList = new ArrayList<>();
-
+    @OneToOne
+    private  User user;
 
 }

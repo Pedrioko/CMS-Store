@@ -6,14 +6,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public @Data
-class Product implements Serializable {
+class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,19 +19,8 @@ class Product implements Serializable {
 
     private String name;
 
-    private String preview;
+    private String image;
 
-    private long quantity;
-
-    private double cost;
-
-    private double saleprice;
-
-    @ManyToMany
-    private List<Category> categoryList = new ArrayList<>();
-
-    @ManyToMany
-    private List<Tag> tagList = new ArrayList<>();
-
-
+    @OneToOne
+    private Category parent_category = null;
 }
