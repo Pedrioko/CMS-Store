@@ -15,12 +15,12 @@ class DetailOrder implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @ManyToOne
     private Product product;
 
-    private  long quantity;
+    private long quantity;
 
     private double tax;
 

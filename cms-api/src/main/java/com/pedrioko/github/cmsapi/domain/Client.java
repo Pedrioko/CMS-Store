@@ -17,7 +17,7 @@ class Client implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String firstname;
 
@@ -27,6 +27,6 @@ class Client implements Serializable {
     private List<Address> addresses = new ArrayList<>();
 
     @OneToOne
-    private  User user;
+    private User user;
 
 }

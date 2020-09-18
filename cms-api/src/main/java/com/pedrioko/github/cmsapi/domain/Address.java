@@ -18,22 +18,22 @@ class Address implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
-    private  String street;
+    private String street;
 
-    private  String city;
+    private String city;
 
-    private  String codepostal;
+    private String codepostal;
 
-    private  String code_country;
+    private String code_country;
 
-    private  String country;
+    private String country;
 
-    private  String cellphone;
+    private String cellphone;
 
-    private  boolean bydefault;
+    private boolean bydefault;
 
-    private  String region;
+    private String region;
 
 }
