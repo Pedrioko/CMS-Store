@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "ordering")
 public @Data
 class Order implements Serializable {
 
@@ -22,11 +23,13 @@ class Order implements Serializable {
     @ManyToOne
     private Client client;
 
-    private OrderStatus status;
+    private OrderStatus status_order;
 
+    @Lob
     private String transaction_id;
 
-    private String uuid;
+    @Lob
+    private String uuid_order;
 
     @ManyToOne
     private Address addressShipping;

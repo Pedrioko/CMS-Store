@@ -20,11 +20,11 @@ class DetailOrder implements Serializable {
     @ManyToOne
     private Product product;
 
-    private long quantity;
+    private Long quantity;
 
-    private double tax;
+    private Double tax;
 
-    private double price;
+    private Double price;
 
 
 }

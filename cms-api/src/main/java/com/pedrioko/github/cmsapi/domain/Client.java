@@ -18,9 +18,9 @@ class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    @Lob
     private String firstname;
-
+    @Lob
     private String lastname;
 
     @OneToMany
